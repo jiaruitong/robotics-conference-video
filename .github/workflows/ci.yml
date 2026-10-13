@@ -1,0 +1,42 @@
+name: Validate skill and installer
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install FFmpeg and Chinese fonts (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install --yes ffmpeg fonts-noto-cjk
+      - name: Install FFmpeg (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: choco install ffmpeg --yes --no-progress
+      - name: Verify video tools
+        run: |
+          ffmpeg -version
+          ffprobe -version
+      - name: Compile maintained Python scripts
+        run: python -m compileall -q tools tests skills/robotics-conference-video/scripts
+      - name: Test complete-tree installation and recoverable updates
+        run: python -m unittest discover -s tests -v
+      - name: Test academic modes and independent synthetic rendering
+        env:
+          PYTHONUTF8: '1'
+        run: python skills/robotics-conference-video/scripts/test_academic_video.py

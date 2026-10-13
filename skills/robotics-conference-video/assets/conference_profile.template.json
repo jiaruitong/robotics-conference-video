@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "venue": null,
+  "year": null,
+  "video_type": "supplementary",
+  "verification_status": "unverified",
+  "checked_date": null,
+  "official_sources": [],
+  "constraints": {
+    "max_duration": {
+      "value": null,
+      "unit": "seconds",
+      "source_id": null,
+      "requirement_level": "unknown"
+    },
+    "max_file_size": {
+      "value": null,
+      "unit": "bytes",
+      "source_id": null,
+      "requirement_level": "unknown"
+    },
+    "container": {
+      "allowed": [],
+      "source_id": null,
+      "requirement_level": "unknown"
+    },
+    "video_codec": {
+      "allowed": [],
+      "source_id": null,
+      "requirement_level": "unknown"
+    },
+    "resolution": {
+      "mode": "unknown",
+      "allowed": [],
+      "source_id": null,
+      "requirement_level": "unknown"
+    },
+    "fps": {
+      "mode": "unknown",
+      "values": [],
+      "source_id": null,
+      "requirement_level": "unknown"
+    },
+    "aspect_ratio": "unknown",
+    "audio_requirement": "unknown",
+    "caption_requirement": "unknown",
+    "anonymization": "unknown",
+    "logo_policy": "unknown",
+    "citation_policy": "unknown"
+  },
+  "submission_notes": []
+}

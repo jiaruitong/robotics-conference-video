@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "title": "Academic Video Example",
+    "conference": "",
+    "year": null,
+    "mode": "supplementary",
+    "language": "en",
+    "voiceover": "required",
+    "subtitles": "yes",
+    "anonymization": "unknown"
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "encoder": "libx264",
+    "audio_encoder": "aac",
+    "audio_bitrate": "192k",
+    "preset": "medium",
+    "crf": 18
+  },
+  "style": {
+    "aspect_ratio": "16:9",
+    "overlay_font_size": 42,
+    "safe_margin_fraction": 0.05
+  },
+  "assets": [],
+  "claims": [],
+  "audio_tracks": [],
+  "segments": []
+}

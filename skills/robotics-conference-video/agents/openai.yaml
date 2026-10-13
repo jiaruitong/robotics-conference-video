@@ -1,0 +1,6 @@
+interface:
+  display_name: "Academic Conference Video"
+  short_description: "Source-grounded academic videos with rendering and QA"
+  default_prompt: "Use $robotics-conference-video to create a paper supplementary video, conference presentation, or academic teaser with source-linked claims and reproducible QA."
+policy:
+  allow_implicit_invocation: true

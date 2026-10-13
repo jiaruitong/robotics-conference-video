@@ -1,0 +1,41 @@
+version: 3
+skill: robotics-conference-video
+
+always_load:
+  - references/workflow.md
+  - references/qa-contract.md
+
+axes:
+  mode:
+    supplementary:
+      guidance:
+        - references/storytelling.md#supplementary
+        - references/evidence-patterns.md
+    presentation:
+      guidance:
+        - references/storytelling.md#presentation
+        - references/visual-style.md
+    teaser:
+      guidance:
+        - references/storytelling.md#teaser
+        - references/visual-style.md
+
+submission_guidance: references/conference-requirements.md
+on_demand:
+  evidence: references/evidence-patterns.md
+  rendering: references/ffmpeg-recipes.md
+  visual_design: references/visual-style.md
+
+scripts:
+  dependencies: scripts/check_dependencies.py
+  inventory: scripts/inspect_media.py
+  subtitles: scripts/make_subtitles.py
+  render: scripts/render_video.py
+  qa: scripts/qa_video.py
+
+machine_sources_of_truth:
+  - conference_profile.json
+  - storyboard.json
+  - media_inventory.json
+  - render_manifest.json
+  - qa_report.json
